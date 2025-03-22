@@ -1,0 +1,6 @@
+@Mission11_Hindmarsh_HostAddress = http://localhost:5196
+
+GET {{Mission11_Hindmarsh_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
