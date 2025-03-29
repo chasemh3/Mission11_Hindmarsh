@@ -66,3 +66,4 @@
 /Users/chasehindmarsh/RiderProjects/Mission11_Hindmarsh/backend/Mission11_Hindmarsh/Mission11_Hindmarsh/obj/Debug/net8.0/Mission11_Hindmarsh.pdb
 /Users/chasehindmarsh/RiderProjects/Mission11_Hindmarsh/backend/Mission11_Hindmarsh/Mission11_Hindmarsh/obj/Debug/net8.0/Mission11_Hindmarsh.genruntimeconfig.cache
 /Users/chasehindmarsh/RiderProjects/Mission11_Hindmarsh/backend/Mission11_Hindmarsh/Mission11_Hindmarsh/obj/Debug/net8.0/ref/Mission11_Hindmarsh.dll
+/Users/chasehindmarsh/RiderProjects/Mission11_Hindmarsh/backend/Mission11_Hindmarsh/Mission11_Hindmarsh/obj/Debug/net8.0/Mission11_Hindmarsh.sourcelink.json

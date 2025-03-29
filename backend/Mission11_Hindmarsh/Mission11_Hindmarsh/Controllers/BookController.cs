@@ -15,17 +15,27 @@ namespace Mission11_Hindmarsh.Controllers
 
         // GET: api/books
         [HttpGet]
-        public ActionResult<IEnumerable<Book>> GetBooks(int pageHowMany = 5, int pageNum = 1, string searchQuery = "")
+        public ActionResult<IEnumerable<Book>> GetBooks(int pageHowMany = 5, int pageNum = 1, string searchQuery ="", [FromQuery] List<string>? bookTypes = null)
         {
-            var booksQuery = _bookContext.Books.AsQueryable();
+            var query = _bookContext.Books.AsQueryable();
+
+// Filter by category
+            if (bookTypes != null && bookTypes.Any())
+            {
+                query = query.Where(b => bookTypes.Contains(b.Category));
+            }
+
+// Filter by search query
             if (!string.IsNullOrWhiteSpace(searchQuery))
             {
-                booksQuery = booksQuery.Where(book => book.Title.ToLower().Contains(searchQuery.ToLower()));
+                query = query.Where(book => book.Title.ToLower().Contains(searchQuery.ToLower()));
             }
-            
-            var totalNumBooks = booksQuery.Count();
-            
-            var books = booksQuery
+
+// Get total book count after filtering
+            var totalNumBooks = query.Count();
+
+// Apply pagination
+            var books = query
                 .Skip((pageNum - 1) * pageHowMany)
                 .Take(pageHowMany)
                 .ToList();
@@ -36,6 +46,17 @@ namespace Mission11_Hindmarsh.Controllers
                 TotalNumBooks = totalNumBooks
             };
             return Ok(someObject);
+        }
+
+        [HttpGet("GetCategories")]
+
+        public IActionResult GetCategories()
+        {
+            var bookCategories = _bookContext.Books
+                .Select(b => b.Category)
+                .Distinct()
+                .ToList();
+            return Ok(bookCategories);
         }
     }
 }
