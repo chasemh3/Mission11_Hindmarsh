@@ -37,7 +37,11 @@ function CartPage() {
           {cart.reduce((total, item) => total + item.price, 0).toFixed(2)}
         </h3>
         <div className="mt-3">
-          <button className="btn btn-primary" disabled={cart.length === 0}>
+          <button
+            className="btn btn-primary"
+            disabled={cart.length === 0}
+            onClick={() => navigate('/cart')}
+          >
             Checkout
           </button>
           <button
