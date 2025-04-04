@@ -58,5 +58,51 @@ namespace Mission11_Hindmarsh.Controllers
                 .ToList();
             return Ok(bookCategories);
         }
+
+        [HttpPost("add")]
+        public IActionResult AddBook([FromBody] Book newBook)
+        {
+            _bookContext.Books.Add(newBook);
+            _bookContext.SaveChanges();
+            return Ok(newBook);
+        }
+        
+        [HttpPut("UpdateBook/{BookID}")]
+        public IActionResult UpdateBook(int BookID, [FromBody] Book updatedBook) 
+        {
+            var existingBook = _bookContext.Books.Find(BookID);
+
+            existingBook.Title = updatedBook.Title;
+            existingBook.Author = updatedBook.Author;
+            existingBook.Publisher = updatedBook.Publisher;
+            existingBook.ISBN = updatedBook.ISBN;
+            existingBook.Classification = updatedBook.Classification;
+            existingBook.Category = updatedBook.Category;
+            existingBook.PageCount = updatedBook.PageCount;
+            existingBook.Price = updatedBook.Price;
+
+            _bookContext.Books.Update(existingBook);
+            _bookContext.SaveChanges();
+
+            return Ok(updatedBook);
+        }
+
+        [HttpDelete("DeleteBook/{BookID}")]
+        public IActionResult DeleteBook(int BookID)
+        {
+            var book = _bookContext.Books.Find(BookID);
+
+            if (book == null)
+            {
+                return NotFound(new {message = "Book not found"});
+            }
+
+            _bookContext.Books.Remove(book);
+            _bookContext.SaveChanges();
+
+            return NoContent();
+        }
+
     }
+
 }

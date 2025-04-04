@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/4c265210-86af-466b-8e8d-ffb18c3e60c3/resourceGroups/appsvc_windows_eastus/providers/Microsoft.Web/sites/BookProject-Hindmarsh",
+  "appService.deploySubpath": "backend/Mission11_Hindmarsh/Mission11_Hindmarsh/publish"
+}

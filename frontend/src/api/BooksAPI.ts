@@ -1,4 +1,3 @@
-import App from '../App';
 import { Book } from '../types/Book';
 
 interface FetchBooksResponse {
