@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mission11_Hindmarsh")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba56ea5193a082f6a9ecd9e457ed35f3a99917a8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9eccca63393a92413e00178119f87be20d24f2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mission11_Hindmarsh")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mission11_Hindmarsh")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

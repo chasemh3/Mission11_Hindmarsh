@@ -14,7 +14,7 @@ builder.Services.AddDbContext<BookDbContext>(options =>
 builder.Services.AddCors(options => 
     options.AddPolicy("AllowReactApp",
     policy => {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins("https://thankful-bay-0ed31541e.6.azurestaticapps.net/")
             .AllowAnyMethod()
             .AllowAnyHeader();
     }));
